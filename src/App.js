@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Switch, Router, Route, NavLink } from 'react-router-dom';
+import { Switch, HashRouter, Route, NavLink, Redirect } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import TemplateList from './containers/TemplateList';
 import TemplateContent from './containers/TemplateContent';
@@ -16,8 +16,10 @@ class App extends Component {
   }
 
   render() {
+    console.log(process.env.PUBLIC_URL);
+
     return (
-      <Router history={history}>
+      <HashRouter history={history}>
         <div className="main_wrapper">
           <header className="header">Used: react, router, redux, thunk</header>
           <aside className="sidebar">
@@ -44,24 +46,13 @@ class App extends Component {
             </Switch>
           </main>
         </div>
-      </Router>
+      </HashRouter>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    templates: state.templates,
-    activeTemplateId: state.activeTemplateId,
-    activeTemplateHTML: state.activeTemplateHTML,
-    isFetching: state.isFetching,
-    showButton: state.showButton,
-    showPanel: state.showPanel
-  };
-}
-
 export default connect(
-  mapStateToProps,
+  state => ({ ...state }),
   dispatch => ({
     getTemplates: bindActionCreators(getTemplates, dispatch)
   })

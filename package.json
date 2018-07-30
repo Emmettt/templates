@@ -2,7 +2,7 @@
   "name": "templates",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://emmettt.github.io/Apps",
+  "homepage": "http://emmettt.github.io/",
   "dependencies": {
     "html-format": "^1.0.1",
     "html-formatter": "^0.1.9",
