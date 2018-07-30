@@ -123,6 +123,11 @@ th {
   font-family: courier;
 }
 
+.msgContent {
+  margin-top: 100px;
+  text-align: center;
+}
+
 .routerlink {
   text-decoration: none;
   display: block;

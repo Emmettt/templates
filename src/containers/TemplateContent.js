@@ -24,7 +24,11 @@ class TemplateContent extends Component {
 
   render() {
     if (!this.props.activeTemplateHTML)
-      return <p>You need to choose template on "Templates List" shortcut.</p>;
+      return (
+        <p className="msgContent">
+          You need to choose template on "Templates List" shortcut.
+        </p>
+      );
     return (
       <div className="wrapper">
         <div className="html-block">

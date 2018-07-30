@@ -3,15 +3,15 @@ const templates = [
     id: 1,
     name: 'One',
     template: `
-<div class='template'>
-<div class='editable'>
+<div class="template">
+<div class="editable">
 One
 </div>
-<div class='container'>
-<div class='editable'>
+<div class="container">
+<div class="editable">
 Two
 </div>
-<div class='editable'>
+<div class="editable">
 Three
 </div>
 </div>
@@ -22,19 +22,19 @@ Three
     id: 2,
     name: 'Two',
     template: `
-          <div class='template'>
-            <div class='container'>
-                <div class='editable'>
+          <div class="template">
+            <div class="container">
+                <div class="editable">
                 One
               </div>
-              <div class='editable'>
+              <div class="editable">
                 Two
               </div>
-              <div class='editable'>
+              <div class="editable">
                 Three
               </div>
             </div>
-            <div class='editable'>
+            <div class="editable">
               Four
             </div>
           </div>`,
@@ -44,14 +44,14 @@ Three
     id: 3,
     name: 'Three',
     template: `
-          <div class='template'>
-            <div class='editable'>
+          <div class="template">
+            <div class="editable">
               one
             </div>
-            <div class='editable'>
+            <div class="editable">
               two
             </div>
-            <div class='editable'>
+            <div class="editable">
               three
             </div>
           </div>`,

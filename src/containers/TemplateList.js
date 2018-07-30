@@ -4,11 +4,12 @@ import TemplateItem from '../components/TemplateItem';
 
 class TemplateList extends Component {
   fetchStatus() {
+    const status = 'fetching... ⏳';
     if (this.props.isFetching && !this.props.list.length) {
       return (
         <tr>
           <td />
-          <td className="status">fetching... ⏳</td>
+          <td className="status">{status}</td>
           <td className="modified" />
         </tr>
       );
