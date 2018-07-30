@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Switch, Router, Route, NavLink } from 'react-router-dom';
-import createHistory from 'history/createBrowserHistory';
+import { HashRouter, Route, NavLink } from 'react-router-dom';
 import TemplateList from './containers/TemplateList';
 import TemplateContent from './containers/TemplateContent';
 import { bindActionCreators } from 'redux';
 import getTemplates from './actions/getTemplates';
 import './App.css';
-
-const history = createHistory({ basename: process.env.PUBLIC_URL });
 
 class App extends Component {
   componentDidMount() {
@@ -17,7 +14,8 @@ class App extends Component {
 
   render() {
     return (
-      <Router history={history}>
+      //HashRouter a bit simpler for gh-pages
+      <HashRouter>
         <div className="main_wrapper">
           <header className="header">Used: react, router, redux, thunk</header>
           <aside className="sidebar">
@@ -38,30 +36,17 @@ class App extends Component {
             </NavLink>
           </aside>
           <main className="main">
-            <Switch>
-              <Route path="/content" component={TemplateContent} />
-              <Route path="/" component={TemplateList} />
-            </Switch>
+            <Route exact path="/" component={TemplateList} />
+            <Route exact path="/content" component={TemplateContent} />
           </main>
         </div>
-      </Router>
+      </HashRouter>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    templates: state.templates,
-    activeTemplateId: state.activeTemplateId,
-    activeTemplateHTML: state.activeTemplateHTML,
-    isFetching: state.isFetching,
-    showButton: state.showButton,
-    showPanel: state.showPanel
-  };
-}
-
 export default connect(
-  mapStateToProps,
+  state => ({ ...state }),
   dispatch => ({
     getTemplates: bindActionCreators(getTemplates, dispatch)
   })

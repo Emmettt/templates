@@ -9,7 +9,7 @@ import saveSync from '../actions/saveSync';
 class SaveButton extends Component {
   onClick = () => {
     this.props.saveSync();
-    this.props.saveClick();
+    this.props.saveClick(); //or add reducer
   };
   render() {
     if (!this.props.visible)
